@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">workshop</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+
+    <string name="linear_layout_horizontal">Horizontal Linear Layout</string>
+    <string name="linear_layout_vertical">Vertical Linear Layout</string>
+</resources>
