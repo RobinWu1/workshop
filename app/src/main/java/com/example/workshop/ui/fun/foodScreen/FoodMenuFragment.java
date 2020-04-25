@@ -74,14 +74,14 @@ public class FoodMenuFragment extends Fragment {
         FoodsModel food6 = new FoodsModel("Chow Mein", R.mipmap.chow_mein);
         FoodsModel food7 = new FoodsModel("Peking Roasted Duck", R.mipmap.peking_roasted_duck);
         FoodsModel food8 = new FoodsModel("Steamed Vermicelli Rolls", R.mipmap.steamed_vermicelli_rolls);
-        foodsList.add(food1);
-        foodsList.add(food2);
-        foodsList.add(food3);
-        foodsList.add(food4);
-        foodsList.add(food5);
-        foodsList.add(food6);
-        foodsList.add(food7);
-        foodsList.add(food8);
+        FoodsModel food9 = new FoodsModel("Fried Shrimp with Cashew Nuts", R.mipmap.fried_shrimp_with_cashew_nuts);
+        FoodsModel food10 = new FoodsModel("Sweet and Sour Pork", R.mipmap.sweet_and_sour_pork);
+        FoodsModel food11 = new FoodsModel("Kung Pao Chicken", R.mipmap.kung_pao_chicken);
+        FoodsModel food12 = new FoodsModel("Ma Po Tofu", R.mipmap.ma_po_tofu);
+        FoodsModel food13 = new FoodsModel("Wontons", R.mipmap.wontons);
+        FoodsModel food14 = new FoodsModel("Spring Rolls", R.mipmap.spring_rolls);
+        FoodsModel food15 = new FoodsModel("Yangchow Fried Rice", R.mipmap.yangchow_fried_rice);
+
 
         foodsList.add(food1);
         foodsList.add(food2);
@@ -91,24 +91,14 @@ public class FoodMenuFragment extends Fragment {
         foodsList.add(food6);
         foodsList.add(food7);
         foodsList.add(food8);
-
+        foodsList.add(food9);
+        foodsList.add(food10);
+        foodsList.add(food11);
+        foodsList.add(food12);
+        foodsList.add(food13);
+        foodsList.add(food14);
+        foodsList.add(food15);
         foodsList.add(food1);
-        foodsList.add(food2);
-        foodsList.add(food3);
-        foodsList.add(food4);
-        foodsList.add(food5);
-        foodsList.add(food6);
-        foodsList.add(food7);
-        foodsList.add(food8);
-
-        foodsList.add(food1);
-        foodsList.add(food2);
-        foodsList.add(food3);
-        foodsList.add(food4);
-        foodsList.add(food5);
-        foodsList.add(food6);
-        foodsList.add(food7);
-        foodsList.add(food8);
 
         //Notify the changes
         foodsAdapter.notifyDataSetChanged();
