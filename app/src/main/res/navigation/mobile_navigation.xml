@@ -18,8 +18,28 @@
         tools:layout="@layout/fragment_dashboard" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.example.workshop.ui.notifications.NotificationsFragment"
-        android:label="Notification"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/navigation_fun"
+        android:name="com.example.workshop.ui.fun.FunFragment"
+        android:label="Fun"
+        tools:layout="@layout/fragment_fun" >
+        <action
+            android:id="@+id/action_navigation_fun_to_navigation_food_menu"
+            app:destination="@id/navigation_food_menu" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_food_menu"
+        android:name="com.example.workshop.ui.fun.foodScreen.FoodMenuFragment"
+        android:label="Food Menu"
+        tools:layout="@layout/food_menu" >
+            <argument
+                android:name="firstName"
+                app:argType="string" />
+        <action
+            android:id="@+id/action_navigation_food_menu_to_navigation_fun"
+            app:destination="@id/navigation_fun" />
+    </fragment>
+
+
+
 </navigation>
