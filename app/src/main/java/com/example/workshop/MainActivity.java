@@ -1,5 +1,6 @@
 package com.example.workshop;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.app.FragmentTransaction;
@@ -9,6 +10,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -18,6 +20,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -35,16 +38,12 @@ import com.example.workshop.ui.utils.DateDialog;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText chooseDate;
-    Calendar calendar;
-    DatePickerDialog datePickerDialog;
-    int currentDayOfMonth;
-    int currentMonth;
-    int currentYear;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
 
         BottomNavigationView navView = findViewById(R.id.nav_view);
@@ -57,36 +56,15 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
 
-        setContentView(R.layout.fragment_fun);
-        chooseDate = (EditText) findViewById(R.id.date_of_birth_edit_text);
+        System.out.println(navController.getCurrentDestination().getId());
 
 
-        chooseDate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                calendar = Calendar.getInstance();
-                currentYear = calendar.get(Calendar.YEAR);
-                currentMonth = calendar.get(Calendar.MONTH);
-                currentDayOfMonth = calendar.get(Calendar.DAY_OF_MONTH);
 
 
-                datePickerDialog = new DatePickerDialog(MainActivity.this, new DatePickerDialog.OnDateSetListener() {
-
-                    @Override
-                    public void onDateSet(DatePicker datePicker, int year, int month, int dayOfMonth) {
-
-                        chooseDate.setText(String.format("%02d/%02d/%04d", month, dayOfMonth, year));
-                    }
-                }, 1994, 9, 26);
-                datePickerDialog.show();
-            }
-        });
 
 
 
     }
-
 
 
 }

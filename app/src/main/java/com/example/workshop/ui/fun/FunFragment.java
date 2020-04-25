@@ -37,14 +37,22 @@ import java.util.Locale;
 @RequiresApi(api = Build.VERSION_CODES.N)
 public class FunFragment extends Fragment {
 
-    final Calendar myCalendar = Calendar.getInstance();
+
+
 
     private FunViewModel funViewModel;
+    EditText chooseDate;
+    java.util.Calendar calendar;
+    DatePickerDialog datePickerDialog;
+    int currentDayOfMonth;
+    int currentMonth;
+    int currentYear;
 
     TextInputLayout lastNameLayout;
     RadioGroup radioGenderGroup;
-    TextInputEditText firstName, lastName, email, password, dateOfBirth;
+    TextInputEditText firstName, lastName, email, password;
     RadioButton maleRadioButton, femaleRadioButton, radioGenderButton;
+
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -52,8 +60,8 @@ public class FunFragment extends Fragment {
                 ViewModelProviders.of(this).get(FunViewModel.class);
         View root = inflater.inflate(R.layout.fragment_fun, container, false);
         return root;
-    }
 
+    }
 
 
     @Override
@@ -100,6 +108,27 @@ public class FunFragment extends Fragment {
             }
         });
 
+        chooseDate = (EditText) view.findViewById(R.id.date_of_birth_edit_text);
+        chooseDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                calendar = java.util.Calendar.getInstance();
+                currentYear = calendar.get(java.util.Calendar.YEAR);
+                currentMonth = calendar.get(java.util.Calendar.MONTH);
+                currentDayOfMonth = calendar.get(java.util.Calendar.DAY_OF_MONTH);
+
+
+                datePickerDialog = new DatePickerDialog(getActivity(), new DatePickerDialog.OnDateSetListener() {
+
+                    @Override
+                    public void onDateSet(DatePicker datePicker, int year, int month, int dayOfMonth) {
+                        chooseDate.setText(String.format("%02d/%02d/%04d", month, dayOfMonth, year));
+                    }
+                }, 1994, 9, 26);
+                datePickerDialog.show();
+            }
+        });
 
     }
 
