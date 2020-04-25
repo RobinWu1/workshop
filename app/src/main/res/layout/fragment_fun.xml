@@ -132,7 +132,7 @@
 
 
             <EditText
-                android:id="@+id/birthday"
+                android:id="@+id/date_of_birth_edit_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:clickable="false"
